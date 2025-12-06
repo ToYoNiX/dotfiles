@@ -1,0 +1,23 @@
+super + f
+    thunar
+
+volumeup
+    pactl set-sink-volume @DEFAULT_SINK@ +10%
+
+volumedown
+    pactl set-sink-volume @DEFAULT_SINK@ -10%
+
+mute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+brightnessup
+    brightnessctl --class="backlight" set 5%+
+
+brightnessdown
+    brightnessctl --class="backlight" set 5%-
+
+print
+    grim -g "$(slurp)" - | wl-copy
+
+super + shift + r
+    pkill -HUP swhkd
